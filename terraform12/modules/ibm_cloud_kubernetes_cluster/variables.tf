@@ -48,3 +48,9 @@ variable "kube_version" {
   default     = "1.11.6"
 }
 
+variable "wait_time_minutes" {
+  type        = number
+  description = "The duration, expressed in minutes, to wait for the cluster to become available ."
+  default     = 90
+}
+

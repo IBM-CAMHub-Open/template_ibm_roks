@@ -48,4 +48,12 @@ variable "roks_version" {
   description = "ROKS version for the cluster."
 }
 
+variable "wait_time_minutes" {
+  type        = number
+  description = "The duration, expressed in minutes, to wait for the cluster to become available."
+  default     = 90
+}
+
+
+
 

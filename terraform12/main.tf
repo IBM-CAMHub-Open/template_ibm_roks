@@ -12,5 +12,6 @@ module "cluster" {
   subnet_id           = var.subnet_id
   resource_group_name = var.resource_group_name
   kube_version        = var.roks_version
+  wait_time_minutes   = var.wait_time_minutes 
 }
 

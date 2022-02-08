@@ -26,8 +26,8 @@ resource "ibm_container_cluster" "kubecluster" {
   default_pool_size = var.num_workers
   resource_group_id = data.ibm_resource_group.named_group.id
   kube_version = var.kube_version
+  wait_time_minutes = var.wait_time_minutes
 }
-
 data "ibm_container_cluster_config" "cluster_config" {
   cluster_name_id   = ibm_container_cluster.kubecluster.name
   resource_group_id = data.ibm_resource_group.named_group.id
