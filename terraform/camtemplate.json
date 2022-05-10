@@ -1,7 +1,7 @@
 {
-  "name": "Red Hat OpenShift Single Zone Cluster on IBM Cloud",
-  "description": "Deploys Red Hat OpenShift cluster in a single zone on IBM Cloud ",
-  "version": "1.0",
+  "name": "Red Hat OpenShift Single Zone Cluster on IBM Cloud for Terraform 1.x.x",
+  "description": "Deploys Red Hat OpenShift cluster in a single zone on IBM Cloud for Terraform 1.x.x",
+  "version": "2.0",
   "type": "prebuilt",
   "manifest": {
     "template_type": "Terraform",
@@ -15,7 +15,7 @@
     "template_source": {
       "githubRepoUrl": "",
       "githubAccessToken": "",
-      "relativePathToTemplateFolder": "terraform12",
+      "relativePathToTemplateFolder": "terraform",
       "templateFileName": "main.tf"
     }
   },
