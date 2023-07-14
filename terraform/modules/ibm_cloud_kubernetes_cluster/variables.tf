@@ -49,8 +49,8 @@ variable "kube_version" {
 }
 
 variable "wait_time_minutes" {
-  type        = number
+  type        = string
   description = "The duration, expressed in minutes, to wait for the cluster to become available ."
-  default     = 90
+  default     = null
 }
 

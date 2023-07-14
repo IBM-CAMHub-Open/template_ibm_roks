@@ -24,19 +24,26 @@ resource "ibm_container_cluster" "kubecluster" {
   subnet_id         = var.subnet_id
   default_pool_size = var.num_workers
   resource_group_id = data.ibm_resource_group.named_group.id
-  kube_version = var.kube_version
-  wait_time_minutes = var.wait_time_minutes
+  kube_version      = var.kube_version
+  wait_till         = "ingressReady" #"Normal"
+  timeouts {
+    create = (var.wait_time_minutes != null ? var.wait_time_minutes : null)
+    update = (var.wait_time_minutes != null ? var.wait_time_minutes : null)
+    delete = (var.wait_time_minutes != null ? var.wait_time_minutes : null)
+  }
 }
 data "ibm_container_cluster_config" "cluster_config" {
   cluster_name_id   = ibm_container_cluster.kubecluster.name
   resource_group_id = data.ibm_resource_group.named_group.id
+  admin             = false
+  config_dir        = "."
 }
 
 ################################################
 # Find worker IP addresses
 ################################################
 data "ibm_container_cluster" "cluster" {
-  cluster_name_id   = ibm_container_cluster.kubecluster.name
+  name              = ibm_container_cluster.kubecluster.name
   resource_group_id = data.ibm_resource_group.named_group.id
 }
 

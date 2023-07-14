@@ -203,7 +203,8 @@
                 },
                 {
                   "value": "dal10",
-                  "label": "Dallas 10, USA"
+                  "label": "Dallas 10, USA",
+                  "default": "true"
                 },
                 {
                   "value": "dal12",
@@ -211,8 +212,7 @@
                 },
                 {
                   "value": "dal13",
-                  "label": "Dallas 13, USA",
-                  "default": "true"
+                  "label": "Dallas 13, USA"
                 },
                 {
                   "value": "fra02",
@@ -340,7 +340,7 @@
             "name": "roks_version",
             "type": "string",
             "description": "RedHat OpenShift version for the cluster.",
-            "default": "4.3_openshift",
+            "default": "4.10_openshift",
             "hidden": false,
             "label": "RedHat OpenShift version",
             "secured": false,
@@ -351,7 +351,7 @@
           "name": "wait_time_minutes",
           "type": "string",
           "description": "The duration, expressed in minutes, to wait for the cluster to become available.",
-          "default": "90",
+          "default": "90m",
           "hidden": false,
           "label": "Timeout time to wait for cluster to become available",
           "secured": false,
